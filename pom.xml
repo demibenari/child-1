@@ -10,8 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>demibenari</groupId>
-    <artifactId>child-1</artifactId>
+    <artifactId>controllers</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
