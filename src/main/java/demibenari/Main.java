@@ -1,22 +1,28 @@
 package demibenari;
 
 import com.google.inject.Injector;
-import demibenari.common.authentication.SecutiryService;
+import demibenari.common.authentication.SecurityService;
 import demibenari.common.configuration.ConfigProvider;
 import demibenari.common.guice.modules.CommonModule;
+import demibenari.controllers.MainController;
 import demibenari.controllers.guice.modules.ControllersModule;
 import demibenari.common.guice.modules.factories.InjectorFactory;
 import demibenari.model.guice.modules.ModelModule;
 import demibenari.view.guice.modules.ViewModule;
 
+/**
+ *
+ * Created by Demi Ben-Ari on 12/13/2014.
+ */
 public class Main {
+
     public static void main(String[] args) {
         intiateModules();
 
-        startApplication();
+        initMainControllerAndStartApplication();
     }
 
-    private static void startApplication() {
+    private static void initMainControllerAndStartApplication() {
         System.out.println("Application started");
 
         Injector injector = InjectorFactory.getInjector();
@@ -25,8 +31,9 @@ public class Main {
 
         String property = configProvider.getProperty("some.property.name");
 
-        SecutiryService securityService = injector.getInstance(SecutiryService.class);
+        MainController mainController = injector.getInstance(MainController.class);
 
+        SecurityService securityService = mainController.getSecurityService();
 
         System.out.println("Application Finished");
     }
