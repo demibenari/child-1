@@ -38,6 +38,8 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize() {
+        System.out.println("Starting the initialization of the Main controller");
 
+        System.out.println("Finished the initialization of the Main controller");
     }
 }
