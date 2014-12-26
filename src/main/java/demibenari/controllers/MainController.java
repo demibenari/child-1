@@ -1,6 +1,7 @@
 package demibenari.controllers;
 
 import com.google.inject.Inject;
+import demibenari.common.Initializable;
 import demibenari.common.authentication.AuthSecurityException;
 import demibenari.common.authentication.SecurityService;
 import demibenari.common.guice.providers.SecurityServiceProvider;
@@ -9,7 +10,7 @@ import demibenari.common.guice.providers.SecurityServiceProvider;
  *
  * Created by Demi Ben-Ari on 12/26/2014.
  */
-public class MainController {
+public class MainController implements Initializable {
     private SecurityService securityService;
 
     // Note: You have to inject the CheckedException Provider to the constructor
@@ -33,5 +34,10 @@ public class MainController {
     public SecurityService getSecurityService() {
         System.out.println("Getting and returning security service");
         return securityService;
+    }
+
+    @Override
+    public void initialize() {
+
     }
 }

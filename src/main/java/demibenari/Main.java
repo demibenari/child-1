@@ -29,7 +29,8 @@ public class Main {
 
         ConfigProvider configProvider = injector.getInstance(ConfigProvider.class);
 
-        String property = configProvider.getProperty("some.property.name");
+        String userDir = configProvider.getProperty("user.dir");
+        System.out.println("User dir is: " + userDir);
 
         MainController mainController = injector.getInstance(MainController.class);
 
