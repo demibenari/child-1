@@ -23,6 +23,7 @@ public class Main {
     }
 
     private static void initMainControllerAndStartApplication() {
+
         System.out.println("Application started");
 
         Injector injector = InjectorFactory.getInjector();
